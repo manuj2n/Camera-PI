@@ -9,6 +9,7 @@ FRAMES = FRAMES_PER_HOUR * 24 * VIDEO_DAYS
 def capture_frame(frame):
     with picamera.PiCamera() as cam:
 	cam.resolution = (1920,1080)
+		cam.awb_mode = 'horizon'
         time.sleep(2)
         ts = time.time()
         st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H-%M-%S')
